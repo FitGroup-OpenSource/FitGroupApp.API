@@ -22,17 +22,20 @@ import java.util.stream.Collectors;
 public class ExerciseController {
     @Autowired
     private ExerciseService exerciseService;
-    //@Autowired
+    @Autowired
     private ModelMapper mapper;
 
-    @GetMapping("/routines/{routinesId}/comments")
+    @GetMapping("/routines/{routinesId}/exercises")
     public Page<ExerciseResource> getAllExercisesByRoutineId(@PathVariable Long routineId, Pageable pageable){
         Page<Exercise> exercisePage = exerciseService.getAllExercisesByRoutineId(routineId,pageable);
         List<ExerciseResource> resources = exercisePage.getContent().stream().map(
                 this::convertToResource).collect(Collectors.toList());
         return new PageImpl<>(resources, pageable, resources.size());
     }
-
+    @GetMapping("/routines/{routinesId}/exercises/{exerciseId}")
+    public ExerciseResource getExercisesByRoutineId(@PathVariable Long routineId,@PathVariable Long exerciseId ){
+        return convertToResource(exerciseService.getExerciseByIdAndRoutineId(exerciseId,routineId));
+    }
     private Exercise convertToEntity(SaveExerciseResource resource){
         return mapper.map(resource, Exercise.class);
     }

@@ -22,6 +22,7 @@ public class RoutinesController {
 
     @Autowired
     private RoutineService routineService;
+    @Autowired
     private ModelMapper mapper;
 
     @GetMapping("/routines")
