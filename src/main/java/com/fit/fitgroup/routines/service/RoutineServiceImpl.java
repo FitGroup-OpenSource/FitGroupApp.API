@@ -30,6 +30,12 @@ public class RoutineServiceImpl implements RoutineService {
     }
 
     @Override
+    public Routine getRoutineByName(String name) {
+        return routineRepository.findByName(name)
+                .orElseThrow(() -> new ResourceNotFoundException("Routine", "Name", name));
+    }
+
+    @Override
     public Routine createRoutine(Routine routine) {
         return routineRepository.save(routine);
     }

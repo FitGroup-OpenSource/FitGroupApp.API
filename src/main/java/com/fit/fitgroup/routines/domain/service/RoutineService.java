@@ -9,6 +9,7 @@ import java.awt.print.Pageable;
 public interface RoutineService {
     Page<Routine> getAllRoutines(Pageable pageable);
     Routine getRoutineById(Long routineId);
+    Routine getRoutineByName(String name);
     Routine createRoutine(Routine routine);
     Routine updateRoutine(Long routineId, Routine routineRequest);
     ResponseEntity<?> deleteRoutine(Long routineId);
