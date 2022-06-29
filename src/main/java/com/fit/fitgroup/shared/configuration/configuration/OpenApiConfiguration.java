@@ -1,4 +1,4 @@
-package com.fit.fitgroup.routines.configuration;
+package com.fit.fitgroup.shared.configuration.configuration;
 
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.Components;

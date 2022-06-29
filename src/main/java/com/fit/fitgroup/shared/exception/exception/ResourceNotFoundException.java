@@ -1,4 +1,4 @@
-package com.fit.fitgroup.routines.exception;
+package com.fit.fitgroup.shared.exception.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
