@@ -17,6 +17,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @SecurityRequirement(name = "fit")
 @RestController
@@ -34,8 +35,8 @@ public class FoodsController {
 
     @GetMapping
     @PreAuthorize("hasRole('USER')")
-    public Page<FoodResource> getAllFoods(@ParameterObject Pageable pageable){
-        return mapper.modelListPage(foodService.getAllFoods(),pageable);
+    public List<FoodResource> getAllFoods(@ParameterObject Pageable pageable){
+        return mapper.modelListPage(foodService.getAllFoods(),pageable).getContent();
     }
     @Operation(summary="Get Food of a nutritional plan", description = "Get Food with determinate value", tags={"Nutrition"})
     @ApiResponses(value = {
