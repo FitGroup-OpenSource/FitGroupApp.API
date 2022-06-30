@@ -5,6 +5,7 @@ import com.fit.fitgroup.security.domain.service.communication.AuthenticateReques
 import com.fit.fitgroup.security.domain.service.communication.RegisterRequest;
 import com.fit.fitgroup.security.mapping.UserMapper;
 import com.fit.fitgroup.security.resource.UserResource;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;
@@ -30,19 +31,17 @@ public class UsersController {
         this.userService = userService;
         this.mapper = mapper;
     }
-
     @PostMapping("/auth/sign-in")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody AuthenticateRequest request) {
         return userService.authenticate(request);
     }
-
     @PostMapping("/auth/sign-up")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest request) {
         return userService.register(request);
     }
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> getAllUsers(Pageable pageable) {
         Page<UserResource> resources = mapper.modelListToPage(userService.getAll(), pageable);
         return ResponseEntity.ok(resources);
