@@ -3,7 +3,6 @@ package com.fit.fitgroup.security.api;
 import com.fit.fitgroup.security.domain.service.RoleService;
 import com.fit.fitgroup.security.mapping.RoleMapper;
 import com.fit.fitgroup.security.resource.RoleResource;
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;

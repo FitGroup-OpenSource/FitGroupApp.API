@@ -5,7 +5,6 @@ import com.fit.fitgroup.security.domain.service.communication.AuthenticateReques
 import com.fit.fitgroup.security.domain.service.communication.RegisterRequest;
 import com.fit.fitgroup.security.mapping.UserMapper;
 import com.fit.fitgroup.security.resource.UserResource;
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;

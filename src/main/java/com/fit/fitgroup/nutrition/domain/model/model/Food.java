@@ -1,4 +1,4 @@
-package com.fit.fitgroup.nutrition.domain.model;
+package com.fit.fitgroup.nutrition.domain.model.model;
 
 import com.fit.fitgroup.shared.domain.model.AuditModel;
 

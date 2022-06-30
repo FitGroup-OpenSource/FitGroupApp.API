@@ -1,6 +1,6 @@
 package com.fit.fitgroup.nutrition.domain.service;
 
-import com.fit.fitgroup.nutrition.domain.model.Food;
+import com.fit.fitgroup.nutrition.domain.model.model.Food;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

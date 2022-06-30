@@ -22,9 +22,7 @@ public class ExerciseResource extends AuditModel {
         this.name = name;
     }
 
-    public String getDifficulty() {
-        return difficulty;
-    }
+    public String getDifficulty() { return difficulty; }
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;

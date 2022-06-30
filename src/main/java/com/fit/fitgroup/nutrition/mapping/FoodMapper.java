@@ -1,6 +1,6 @@
 package com.fit.fitgroup.nutrition.mapping;
 
-import com.fit.fitgroup.nutrition.domain.model.Food;
+import com.fit.fitgroup.nutrition.domain.model.model.Food;
 import com.fit.fitgroup.nutrition.resource.FoodResource;
 import com.fit.fitgroup.shared.mapping.EnhancedModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
