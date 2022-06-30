@@ -22,7 +22,7 @@ public class RegisterRequest {
 
     @NotNull
     @NotBlank
-    private String password;
+    private String password ;
 
     private Set<String> roles;
 

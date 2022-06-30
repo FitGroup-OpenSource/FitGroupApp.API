@@ -55,12 +55,13 @@ public class RoutinesController {
             @ApiResponse(responseCode = "200", description = "Routine modified", content = @Content(mediaType = "application/json"))
     })
 
+
     @GetMapping("{routineId}")
     @PreAuthorize("hasRole('USER')")
     public RoutineResource getRoutineById(@PathVariable Long routineId) {
         return mapper.toResource(routineService.getRoutineById(routineId));
     }
-
+    @Operation(tags={"Routines"})
     @PutMapping("{routineId}")
     @PreAuthorize("hasRole('USER')")
     public RoutineResource updateRoutine(@PathVariable Long routineId,@Valid @RequestBody UpdateRoutineResource resource){

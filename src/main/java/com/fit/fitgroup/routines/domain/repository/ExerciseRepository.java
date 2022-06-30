@@ -7,10 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-
+import java.util.List;
 @Repository
 public interface ExerciseRepository extends JpaRepository<Exercise,Long> {
-    Page<Exercise> findByRoutineId(Long routineId, Pageable pageable);
-    Optional<Exercise> findByIdAndRoutineId(Long id, Long routineId);
+    List<Exercise> findByRoutineId(Long routineId);
 
 }

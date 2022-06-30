@@ -83,9 +83,7 @@ public class UserServiceImpl implements UserService {
             AuthenticateResource resource = mapper.map(userDetails, AuthenticateResource.class);
             resource.setRoles(roles);
             resource.setToken(token);
-
             AuthenticateResponse response = new AuthenticateResponse(resource);
-
             return ResponseEntity.ok(response.getResource());
 
 

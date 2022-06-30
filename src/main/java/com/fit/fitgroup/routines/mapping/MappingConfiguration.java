@@ -10,5 +10,9 @@ public class MappingConfiguration {
     public RoutineMapper routineMapper() {
         return new RoutineMapper();
     }
+    @Bean
+    public ExerciseMapper exerciseMapper() {
+        return new ExerciseMapper();
+    }
 
 }

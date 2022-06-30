@@ -16,6 +16,7 @@ import java.util.List;
 @Service
 public class RoutineServiceImpl implements RoutineService {
     private static final String ENTITY = "Routine";
+    @Autowired
     private RoutineRepository routineRepository;
 
     public Page<Routine> getAllRoutines(Pageable pageable) {
