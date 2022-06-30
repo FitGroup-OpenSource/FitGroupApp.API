@@ -22,6 +22,7 @@ import javax.validation.Valid;
 
 @SecurityRequirement(name = "fit")
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api/routines")
 public class RoutinesController {
 

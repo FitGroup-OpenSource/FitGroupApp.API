@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @SecurityRequirement(name = "fit")
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api/exercises")
 public class ExerciseController {
     private final  ExerciseService exerciseService;
