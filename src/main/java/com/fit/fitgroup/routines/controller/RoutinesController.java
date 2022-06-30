@@ -19,6 +19,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @SecurityRequirement(name = "fit")
 @RestController
@@ -39,8 +40,8 @@ public class RoutinesController {
 
     @GetMapping
     @PreAuthorize("hasRole('USER')")
-    public Page<RoutineResource> getAllRoutines(@ParameterObject Pageable pageable){
-        return mapper.modelListPage(routineService.getAllRoutines(),pageable);
+    public List<RoutineResource> getAllRoutines(@ParameterObject Pageable pageable){
+        return mapper.modelListPage(routineService.getAllRoutines(),pageable).getContent();
     }
     @Operation(summary="Post Routines", description = "Post Routine with determinate value", tags={"Routines"})
     @ApiResponses(value = {

@@ -32,15 +32,14 @@ public class TrainersController {
         this.mapper = mapper;
     }
 
-
-    @Operation(summary="Get Trainers", description = "Get All Trainers by Pages", tags={"Trainers"})
+    @Operation(summary="Get Trainers", description = "Get All Trainers by Pages", tags={"Dates"})
 
     @GetMapping
     @PreAuthorize("hasRole('USER')")
     public Page<TrainerResource> getAllTrainers(@ParameterObject Pageable pageable){
         return mapper.modelListPage(trainerService.getAllTrainers(),pageable);
     }
-    @Operation(summary="Post Trainers", description = "Post Trainer with determinate value", tags={"Trainers"})
+    @Operation(summary="Post Trainers", description = "Post Trainer with determinate value", tags={"Dates"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Trainer created", content = @Content(mediaType = "application/json"))
     })
@@ -49,7 +48,7 @@ public class TrainersController {
     public ResponseEntity<TrainerResource> createTrainer(@Valid @RequestBody SaveTrainerResource resource){
         return new ResponseEntity<>(mapper.toResource(trainerService.createTrainer(mapper.toModel(resource))), HttpStatus.CREATED);
     }
-    @Operation(summary="Modify Trainers", description = "Modify Trainer with determinate value", tags={"Trainers"})
+    @Operation(summary="Modify Trainers", description = "Modify Trainer with determinate value", tags={"Dates"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Trainer modified", content = @Content(mediaType = "application/json"))
     })
@@ -60,7 +59,7 @@ public class TrainersController {
     public TrainerResource getTrainerById(@PathVariable Long trainerId) {
         return mapper.toResource(trainerService.getTrainerById(trainerId));
     }
-    @Operation(tags={"Trainers"})
+    @Operation(tags={"Dates"})
     @PutMapping("{trainerId}")
     @PreAuthorize("hasRole('USER')")
     public TrainerResource updateTrainer(@PathVariable Long trainerId,@Valid @RequestBody UpdateTrainerResource resource){
