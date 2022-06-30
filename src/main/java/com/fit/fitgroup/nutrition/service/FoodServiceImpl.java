@@ -1,6 +1,6 @@
 package com.fit.fitgroup.nutrition.service;
 
-import com.fit.fitgroup.nutrition.domain.model.Food;
+import com.fit.fitgroup.nutrition.mapping.model.Food;
 import com.fit.fitgroup.nutrition.domain.repository.FoodRepository;
 import com.fit.fitgroup.nutrition.domain.service.FoodService;
 import com.fit.fitgroup.shared.exception.exception.ResourceNotFoundException;
