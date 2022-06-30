@@ -20,6 +20,7 @@ import javax.validation.Valid;
 
 @SecurityRequirement(name = "fit")
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api/nutritional-plan")
 public class FoodsController {
     private final FoodService foodService;
