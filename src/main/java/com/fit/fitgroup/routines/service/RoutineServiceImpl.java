@@ -3,24 +3,30 @@ package com.fit.fitgroup.routines.service;
 import com.fit.fitgroup.routines.domain.model.Routine;
 import com.fit.fitgroup.routines.domain.repository.RoutineRepository;
 import com.fit.fitgroup.routines.domain.service.RoutineService;
-import com.fit.fitgroup.routines.exception.ResourceNotFoundException;
+import com.fit.fitgroup.shared.exception.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.ResourceAccessException;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 @Service
 public class RoutineServiceImpl implements RoutineService {
+    private static final String ENTITY = "Routine";
     @Autowired
     private RoutineRepository routineRepository;
 
-    @Override
     public Page<Routine> getAllRoutines(Pageable pageable) {
 
-        return routineRepository.findAll((org.springframework.data.domain.Pageable) pageable);
+        return routineRepository.findAll( pageable);
+    }
+
+    @Override
+    public List<Routine> getAllRoutines() {
+        return routineRepository.findAll();
     }
 
     @Override

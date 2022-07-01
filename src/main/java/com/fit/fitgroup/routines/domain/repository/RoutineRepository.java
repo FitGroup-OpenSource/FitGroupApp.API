@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface RoutineRepository extends JpaRepository<Routine, Long> {
-    public Optional<Routine> findByName(String name);
+    Optional<Routine> findByName(String name);
 }

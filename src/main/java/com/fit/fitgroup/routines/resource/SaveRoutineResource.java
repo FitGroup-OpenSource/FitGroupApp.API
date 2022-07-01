@@ -6,12 +6,10 @@ import javax.validation.constraints.Size;
 
 public class SaveRoutineResource {
     @NotNull
-    @NotBlank
     @Size(max = 100)
     private String name;
 
     @NotNull
-    @NotBlank
     private Integer rating;
 
     public String getName() {

@@ -4,7 +4,7 @@ import com.fit.fitgroup.routines.domain.model.Routine;
 import com.fit.fitgroup.routines.domain.repository.ExerciseRepository;
 import com.fit.fitgroup.routines.domain.repository.RoutineRepository;
 import com.fit.fitgroup.routines.domain.service.RoutineService;
-import com.fit.fitgroup.routines.exception.ResourceNotFoundException;
+import com.fit.fitgroup.shared.exception.exception.ResourceNotFoundException;
 import com.fit.fitgroup.routines.service.RoutineServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
