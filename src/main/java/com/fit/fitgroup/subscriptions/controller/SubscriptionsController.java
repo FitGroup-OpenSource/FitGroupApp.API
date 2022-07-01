@@ -1,8 +1,5 @@
 package com.fit.fitgroup.subscriptions.controller;
 
-
-import com.fit.fitgroup.membership.domain.service.MembershipService;
-import com.fit.fitgroup.membership.mapping.MembershipMapper;
 import com.fit.fitgroup.subscriptions.domain.model.Subscription;
 import com.fit.fitgroup.subscriptions.domain.service.SubscriptionService;
 import com.fit.fitgroup.subscriptions.resource.SaveSubscriptionResource;

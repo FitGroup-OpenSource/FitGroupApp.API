@@ -11,7 +11,6 @@ public class SaveSubscriptionResource {
     private String description;
 
     @NotNull
-    @NotBlank
     private Integer duration;
 
     public String getDescription() {
