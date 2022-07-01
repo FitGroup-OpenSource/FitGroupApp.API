@@ -2,9 +2,9 @@ package com.fit.fitgroup.subscriptions.domain.service;
 
 import com.fit.fitgroup.subscriptions.domain.model.Subscription;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
-import java.awt.print.Pageable;
 
 public interface SubscriptionService {
     Page<Subscription> getAllSubscriptions(Pageable pageable);

@@ -1,17 +1,14 @@
 package com.fit.fitgroup.subscriptions.service;
 
-import com.fit.fitgroup.routines.exception.ResourceNotFoundException;
+import com.fit.fitgroup.shared.exception.exception.ResourceNotFoundException;
 import com.fit.fitgroup.subscriptions.domain.model.Subscription;
 import com.fit.fitgroup.subscriptions.domain.repository.SubscriptionRepository;
 import com.fit.fitgroup.subscriptions.domain.service.SubscriptionService;
-// import com.fit.fitgroup.subscriptions.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.ResourceAccessException;
-
-import java.awt.print.Pageable;
 
 @Service
 public class SubscriptionServiceImpl implements SubscriptionService {

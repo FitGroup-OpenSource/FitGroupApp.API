@@ -1,6 +1,8 @@
 package com.fit.fitgroup.subscriptions.controller;
 
 
+import com.fit.fitgroup.membership.domain.service.MembershipService;
+import com.fit.fitgroup.membership.mapping.MembershipMapper;
 import com.fit.fitgroup.subscriptions.domain.model.Subscription;
 import com.fit.fitgroup.subscriptions.domain.service.SubscriptionService;
 import com.fit.fitgroup.subscriptions.resource.SaveSubscriptionResource;
@@ -9,6 +11,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,6 +24,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SecurityRequirement(name = "fit")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RestController
 @RequestMapping("/api")
 public class SubscriptionsController {
@@ -30,13 +35,18 @@ public class SubscriptionsController {
     @Autowired
     private ModelMapper mapper;
 
+    public SubscriptionsController(SubscriptionService subscriptionService, ModelMapper mapper) {
+        this.subscriptionService = subscriptionService;
+        this.mapper = mapper;
+    }
+
     @Operation(summary="Get Subscriptions", description = "Get All Subscriptions by Pages", tags={"Subscriptions"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "All Subscriptions returned", content = @Content(mediaType = "application/json"))
     })
     @GetMapping("/subscriptions")
     public Page<SubscriptionResource> getAllSubscriptions(Pageable pageable){
-        Page<Subscription> subscriptionsPage = subscriptionService.getAllSubscriptions((java.awt.print.Pageable) pageable);
+        Page<Subscription> subscriptionsPage = subscriptionService.getAllSubscriptions((org.springframework.data.domain.Pageable) pageable);
         List<SubscriptionResource> resources = subscriptionsPage.getContent()
                 .stream()
                 .map(this::convertToResource)
